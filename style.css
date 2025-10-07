@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+.centered {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2em 1em;
+    text-align: center;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+.profile img {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    margin-bottom: 0;
+}
+.profile h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+.links {
+    margin: 1em 0;
+}
+.links a {
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+.projects {
+    margin-top: em;
+}
+.project {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: none;
+    text-align: left;
+    display: block;
+}
+.project img.banner {
+    width: 100%;
+    max-width: 480px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 1em auto;
+}
+.project-details {
+    flex: none;
+    text-align: left;
+}
+h1, h2 {
+    color: #222;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+}
