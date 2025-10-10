@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body {
     font-family: Arial, sans-serif;
-    background: #fff;
+    background: #e9e9e9;
     color: #222;
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ body {
     margin-top: em;
 }
 .project {
-    background: #fafafa;
+    background: #dfdfdf;
     border-radius: 8px;
     padding: 1em;
     margin-bottom: 1em;
