@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body {
     font-family: Arial, sans-serif;
-    background: #e9e9e9;
+    background: #eeeeee;
     color: #222;
     margin: 0;
     padding: 0;
@@ -54,6 +54,14 @@ body {
     box-shadow: none;
     text-align: left;
     display: block;
+    transform: translateY(0);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease;
+    will-change: transform;
+}
+.project:hover,
+.project:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 .project img.banner {
     width: 100%;
@@ -72,4 +80,11 @@ h1, h2 {
     color: #222;
     font-weight: normal;
     margin-bottom: 0.5em;
+}
+
+body.no-lift .project,
+body.no-lift .project:hover,
+body.no-lift .project:focus-within {
+    transform: none !important;
+    box-shadow: none !important;
 }
