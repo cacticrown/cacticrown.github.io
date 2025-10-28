@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog - cacticrown</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <a href="/index.html">← Back</a>
+  </nav>
+  <hr>
+  <h1>Blog</h1>
+  <ul class="index" id="all-posts"></ul>
+
+  <script>
+  fetch('posts.json')
+    .then(r => r.json())
+    .then(posts => {
+      const list = document.getElementById('all-posts');
+      posts.forEach(post => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${post.url}">${post.title}</a> <small>${new Date(post.date).toLocaleDateString()}</small>`;
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

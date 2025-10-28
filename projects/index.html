@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog - cacticrown</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <a href="/index.html">← Back</a>
+  </nav>
+  <hr>
+
+  <h1>Projects</h1>
+  <ul class="index" id="all-projects"></ul>
+
+  <script>
+  fetch('/projects/projects.json')
+    .then(r => r.json())
+    .then(projects => {
+      const list = document.getElementById('all-projects');
+      projects.forEach(project => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${project.url}">${project.title}</a>`;
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
