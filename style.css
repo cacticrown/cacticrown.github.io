@@ -22,19 +22,6 @@
   }
 }
 
-@media (max-width: 500px) {
-  nav {
-    flex-direction: column;      /* stack left/right vertically */
-    align-items: flex-start;
-  }
-  
-  nav .left, nav .right {
-    flex-direction: row;
-    flex-wrap: wrap;             /* wrap links if needed */
-    gap: 0.5rem;
-  }
-}
-
 :root {
   font-family: system-ui, sans-serif;
   font-size: 1rem;
