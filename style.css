@@ -72,8 +72,7 @@ small {
 }
 
 nav {
-  display: flex;
-  flex-wrap: nowrap;
+  display: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -81,8 +80,7 @@ nav {
 
 nav .left,
 nav .right {
-  display: flex;
-  flex-wrap: wrap;
+  display: wrap;
   gap: 1rem;
 }
 
