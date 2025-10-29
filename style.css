@@ -59,7 +59,7 @@ small {
 }
 
 nav {
-  display: wrap;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -67,7 +67,7 @@ nav {
 
 nav .left,
 nav .right {
-  display: wrap;
+  display: flex;
   gap: 1rem;
 }
 
