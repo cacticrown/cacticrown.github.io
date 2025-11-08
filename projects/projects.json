@@ -1,10 +1,12 @@
 [
     {
     "title": "Cactied.Localization",
-    "url": "https://github.com/cacticrown/Cactied.Localization"
+    "url": "https://github.com/cacticrown/Cactied.Localization",
+    "description": "A fast and leightweight localization library written in C#."
   },
   {
     "title": "A World Below",
-    "url": "https://github.com/cacticrown/AWorldBelow-Public"
+    "url": "https://github.com/cacticrown/AWorldBelow-Public",
+    "description": "A 2D Metroidvania."
   }
 ]

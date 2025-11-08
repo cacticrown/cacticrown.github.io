@@ -22,7 +22,7 @@
       const list = document.getElementById('all-projects');
       projects.forEach(project => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${project.url}">${project.title}</a>`;
+        li.innerHTML = `<a href="${project.url}">${project.title}</a> <small><i>${project.description}</i> </small>`;
         list.appendChild(li);
       });
     });
