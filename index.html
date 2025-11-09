@@ -22,19 +22,52 @@
         </div>
     </nav>
 
-
     <hr>
 
     <section id="about">
-    <h1>About</h1>
-    <p>
-        Hi, I'm a <span id="age"></span> year old Christian from Austria.
-        I spend most of my free time coding - maybe one day it'll lead to something. Who knows.
-    </p>
+        <h1># About</h1>
+        <p>
+            Hi, I'm a <span id="age"></span> year old Christian from Austria.
+            I spend most of my free time coding - maybe one day it'll lead to something. Who knows.
+        </p>
+    </section>
+    
+    <section id="skills">
+        <h1># Skills</h1>
+
+        <h2>## Programming Languages</h2>
+        <ul>
+            <li>
+                Fluent in 
+                <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank">C#</a> 
+                and 
+                <a href="https://www.lua.org/" target="_blank">Lua</a>
+            </li>
+            <li>
+                Learning 
+                <a href="https://ziglang.org/" target="_blank">Zig</a>, HTML, CSS, and JavaScript
+            </li>
+        </ul>
+
+        <h2>## Libraries / Tools</h2>
+        <ul>
+            <li>
+                <a href="https://git-scm.com/" target="_blank">Git</a> /
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.monogame.net/" target="_blank">MonoGame</a> /
+                <a href="https://fna-xna.github.io/" target="_blank">FNA</a> (XNA)
+            </li>
+            <li>
+                <a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio</a> /
+                <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+            </li>
+        </ul>
     </section>
 
     <section id="blog">
-        <h1>Blog</h1>
+        <h1># Blog</h1>
         <ul class="index" id="latest-posts"></ul>
         <p><a href="/blog/index.html">↪ More</a></p>
     </section>
@@ -45,15 +78,15 @@
     .then(posts => {
         const list = document.getElementById('latest-posts');
         posts.slice(0, 4).forEach(post => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${post.url}">${post.title}</a> <small>${new Date(post.date).toLocaleDateString()}</small>`;
-        list.appendChild(li);
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${post.url}">${post.title}</a> <small>${new Date(post.date).toLocaleDateString()}</small>`;
+            list.appendChild(li);
         });
     });
     </script>
 
     <section id="projects">
-        <h1>Projects</h1>
+        <h1># Projects</h1>
         <ul class="index" id="latest-projects"></ul>
         <p><a href="/projects/index.html">↪ More</a></p>
     </section>
@@ -64,9 +97,9 @@
     .then(projects => {
         const list = document.getElementById('latest-projects');
         projects.slice(0, 4).forEach(project => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${project.url}">${project.title}</a> <small><i>${project.description}</i> </small>`;
-        list.appendChild(li);
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${project.url}">${project.title}</a> <small><i>${project.description}</i></small>`;
+            list.appendChild(li);
         });
     });
     </script>
