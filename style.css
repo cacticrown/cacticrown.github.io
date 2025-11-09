@@ -42,19 +42,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--blue);
+  --a-fg: var(--blue);
+  --a-bg: var(--bg);
+  color: var(--a-fg);
   font-family: monospace;
   text-decoration: underline;
 }
 
 a:hover {
-  background: var(--blue);
-  color: var(--bg);
+  background: var(--a-fg);
+  color: var(--a-bg);
   text-decoration: none;
 }
 
-small {
-  opacity: 0.5;
+ul.index {
+  line-height: 1.7rem;
+}
+
+ul.index li:nth-child(even) a {
+  --a-fg: var(--aqua);
 }
 
 nav {
@@ -71,20 +77,16 @@ nav .right {
 }
 
 nav a {
-  color: var(--blue);
+  --a-fg: var(--blue);
   text-decoration: underline;
 }
 
 nav a:hover {
-  color: var(--bg);
-  background: var(--blue);
+  background: var(--a-fg);
+  color: var(--a-bg);
   text-decoration: none;
 }
 
-ul.index {
-  line-height: 1.7rem;
-}
-
-ul.index li:nth-child(even) a {
-  color: var(--aqua);
+small {
+  opacity: 0.5;
 }
