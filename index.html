@@ -1,127 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/cacticrown.png">
+    <meta charset="UTF-8">
+    <title>cacticrown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>cacticrown's place</title>
-    <meta name="description" content="">
 </head>
 <body>
-    <nav>
-        <div class="left">
-            <a href="/index.html">home</a>
-            <a href="/blog/index.html">blog</a>
-            <a href="/projects/index.html">projects</a>
+    <div class="centered">
+        <div class="profile">
+            <a href="index.html" style="display: flex; align-items: center; gap: 1em; text-decoration: none; color: inherit;">
+                <img src="https://avatars.githubusercontent.com/u/187777269?v=4" alt="Cacticrown GitHub Avatar">
+                <h1>cacticrown</h1>
+            </a>
         </div>
-        <div class="right">
-            <a href="https://discord.com/invite/xpw6Qpx7ZB" target="_blank">discord</a>
-            <a href="https://github.com/cacticrown/" target="_blank">github</a>
-            <a href="https://bsky.app/profile/cacticrown.bsky.social" target="_blank">bluesky</a>
+        <div class="links">
+            <a href="https://github.com/cacticrown" target="_blank" style="text-decoration: none;">
+                <img class="github-logo" src="logos/github.png" alt="GitHub" style="height:32px;vertical-align:middle;">
+            </a>
+            <a href="https://bsky.app/profile/cacticrown.bsky.social" target="_blank" style="text-decoration: none;">
+                <img src="logos/bluesky.png" alt="Bluesky" style="height:32px;vertical-align:middle;">
+            </a>
+            <a href="https://discord.gg/https://discord.com/invite/xpw6Qpx7ZB" target="_blank" style="text-decoration: none;">
+                <img src="logos/discord.png" alt="Discord" style="height:32px;vertical-align:middle;">
+            </a>
         </div>
-    </nav>
+        <section class="card">
+            <h2>Hello!</h2>
+            <p>
+                I'm a 15 year old Christian from Austria. I spend most of my free time coding - maybe one day it'll lead to something. Who knows.
+            </p>
+        </section>
 
-    <hr>
+        <section class="card">
+            <h2>Tools</h2>
+            <p>
+                I love making stuff from scratch, that's why I don't use game engines. I mainly use
+                <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank">C#</a>
+                and
+                <a href="https://www.monogame.net/" target="_blank">MonoGame</a>
+                for my projects. I am also fluent in
+                <a href="https://www.lua.org/" target="_blank">Lua</a>,
+                and I'm currently learning
+                <a href="https://ziglang.org/" target="_blank">Zig</a>.
+            </p>
+        </section>
 
-    <section id="about">
-        <h1># About</h1>
-        <p>
-            Hi, I'm a <span id="age"></span> year old Christian from Austria.
-            I spend most of my free time coding - maybe one day it'll lead to something. Who knows.
-        </p>
-    </section>
-    
-    <section id="skills">
-        <h1># Skills</h1>
-
-        <h2>## Programming Languages</h2>
-        <ul>
-            <li>
-                Fluent in 
-                <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank">C#</a> 
-                and 
-                <a href="https://www.lua.org/" target="_blank">Lua</a>
-            </li>
-            <li>
-                Learning 
-                <a href="https://ziglang.org/" target="_blank">Zig</a>, HTML, CSS, and JavaScript
-            </li>
-        </ul>
-
-        <h2>## Libraries / Tools</h2>
-        <ul>
-            <li>
-                <a href="https://git-scm.com/" target="_blank">Git</a> /
-                <a href="https://github.com/" target="_blank">GitHub</a>
-            </li>
-            <li>
-                <a href="https://www.monogame.net/" target="_blank">MonoGame</a> /
-                <a href="https://fna-xna.github.io/" target="_blank">FNA</a> (XNA)
-            </li>
-            <li>
-                <a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio</a> /
-                <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-            </li>
-        </ul>
-    </section>
-
-    <section id="blog">
-        <h1># Blog</h1>
-        <ul class="index" id="latest-posts"></ul>
-        <p><a href="/blog/index.html">↪ More</a></p>
-    </section>
-
-    <script>
-    fetch('/blog/posts.json')
-    .then(r => r.json())
-    .then(posts => {
-        const list = document.getElementById('latest-posts');
-        posts.slice(0, 4).forEach(post => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${post.url}">${post.title}</a> <small>${new Date(post.date).toLocaleDateString()}</small>`;
-            list.appendChild(li);
-        });
-    });
-    </script>
-
-    <section id="projects">
-        <h1># Projects</h1>
-        <ul class="index" id="latest-projects"></ul>
-        <p><a href="/projects/index.html">↪ More</a></p>
-    </section>
-
-    <script>
-    fetch('/projects/projects.json')
-    .then(r => r.json())
-    .then(projects => {
-        const list = document.getElementById('latest-projects');
-        projects.slice(0, 4).forEach(project => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${project.url}">${project.title}</a> <small><i>${project.description}</i></small>`;
-            list.appendChild(li);
-        });
-    });
-    </script>
-
-    <hr style="margin:1.5rem 0">
-
-    <footer style="width:fit-content; margin:auto"></footer>
-
-    <script>
-    const birthYear = 2010;
-    const birthMonth = 8;
-    const birthDay = 28;
-
-    const today = new Date();
-    let age = today.getFullYear() - birthYear;
-    const hasHadBirthday =
-        today.getMonth() + 1 > birthMonth ||
-        (today.getMonth() + 1 === birthMonth && today.getDate() >= birthDay);
-
-    if (!hasHadBirthday) age--;
-
-    document.getElementById("age").textContent = age;
-    </script>
+        <h2>Projects</h2>
+        <div class="projects">
+            <a class="project" href="projects/a-world-below/index.html" style="text-decoration:none; color:inherit; display:block;">
+                <img class="banner" src="projects/a-world-below/a-world-below-banner.png" alt="Project 1 Screenshot">
+                <div class="project-details">
+                    <strong>A World Below</strong>
+                    <p>A 2D, co-op, pixel-precision platformer with deep story.</p>
+                </div>
+            </a>
+            <a class="project" href="https://github.com/cacticrown/Prefab-Studio" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+                <img class="banner" src="projects/Prefab-Studio/Prefab-Studio-banner.png" alt="Project 2 Screenshot">
+                <div class="project-details">
+                    <strong>Prefab Studio</strong>
+                    <p>An engine agnostic Prefab Editor.</p>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
