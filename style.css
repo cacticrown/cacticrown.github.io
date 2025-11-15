@@ -34,15 +34,26 @@ body {
     line-height: 1;
     letter-spacing: 2px;
 }
-.links {
-    margin: 1em 0;
+
+a,
+a:link,
+a:visited,
+a:active {
+    color: #0b6313;
+    text-decoration: underline;
 }
-.links a {
-    margin: 0 0.5em;
-    text-decoration: none;
-    color: #222;
-    font-weight: bold;
+
+a:hover {
+    color: #07360b;
 }
+
+a img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
 .projects {
     margin-top: em;
 }
@@ -88,7 +99,7 @@ body.no-lift .project:focus-within {
     transform: none !important;
     box-shadow: none !important;
 }
-.about {
+.card {
     background: #dfdfdf;
     padding: 0.9em 1em;
     border-radius: 8px;
@@ -99,12 +110,64 @@ body.no-lift .project:focus-within {
     line-height: 1.5;
     color: #333;
 }
-.about h2 {
+.card h2 {
     margin: 0 0 0.4em 0;
     font-size: 1.1em;
     color: #111;
 }
-.about p {
+.card p {
     margin: 0;
     font-size: 1em;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e6e6e6;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        color: #85b88a;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: #4e7952;
+    }
+
+    h1, h2 {
+        color: #e6e6e6;
+    }
+
+    .project {
+        background: #1e1e1e;
+        box-shadow: none;
+    }
+
+    .project:hover,
+    .project:focus-within {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .card {
+        background: #1e1e1e;
+        color: #e6e6e6;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    .card h2 {
+        color: #f0f0f0;
+    }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    .github-logo {
+        filter: invert(100%) brightness(1.1);
+    }
 }
