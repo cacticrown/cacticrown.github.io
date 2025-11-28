@@ -171,3 +171,35 @@ body.no-lift .project:focus-within {
         filter: invert(100%) brightness(1.1);
     }
 }
+
+.footer {
+    margin-top: 2em;
+    padding: 2em 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    opacity: 0.8;
+}
+
+.footer a {
+    color: #0b6313;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #07360b;
+}
+
+@media (prefers-color-scheme: dark) {
+    .footer {
+        color: #aaa;
+    }
+
+    .footer a {
+        color: #85b88a;
+    }
+
+    .footer a:hover {
+        color: #4e7952;
+    }
+}
