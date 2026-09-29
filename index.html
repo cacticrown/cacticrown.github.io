@@ -4,9 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>cacticrown</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <div id="bg-rows" aria-hidden="true"></div>
+
         <main class="content-container">
             <header>
                 <a href="index.html" class="home-link">cacticrown</a>
@@ -197,5 +207,60 @@
                 >.
             </footer>
         </main>
+
+        <script>
+            (function () {
+                const layer = document.getElementById("bg-rows");
+                const WORD = "cacticrown";
+                const GAP = "   ";
+                const ROW_HEIGHT = 28;
+                const SPEED = 24; // pixels per second
+
+                function build() {
+                    layer.innerHTML = "";
+
+                    const probe = document.createElement("span");
+                    probe.className = "bg-track";
+                    probe.style.animation = "none";
+                    probe.style.visibility = "hidden";
+                    probe.textContent = WORD + GAP;
+                    layer.appendChild(probe);
+                    const unitWidth = probe.getBoundingClientRect().width;
+                    layer.removeChild(probe);
+
+                    const copiesPerHalf =
+                        Math.ceil(window.innerWidth / unitWidth) + 1;
+                    const half = (WORD + GAP).repeat(copiesPerHalf);
+                    const duration = (unitWidth * copiesPerHalf) / SPEED;
+
+                    const rows = Math.ceil(window.innerHeight / ROW_HEIGHT) + 1;
+                    for (let i = 0; i < rows; i++) {
+                        const row = document.createElement("div");
+                        row.className = "bg-row" + (i % 2 ? " reverse" : "");
+
+                        const track = document.createElement("span");
+                        track.className = "bg-track";
+                        track.textContent = half + half;
+                        track.style.animationDuration = duration + "s";
+                        track.style.animationDelay =
+                            -Math.random() * duration + "s";
+
+                        row.appendChild(track);
+                        layer.appendChild(row);
+                    }
+                }
+
+                let timer;
+                window.addEventListener("resize", () => {
+                    clearTimeout(timer);
+                    timer = setTimeout(build, 200);
+                });
+
+                (document.fonts
+                    ? document.fonts.ready
+                    : Promise.resolve()
+                ).then(build);
+            })();
+        </script>
     </body>
 </html>

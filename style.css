@@ -4,13 +4,47 @@ body {
     line-height: 1.7;
     margin: 0;
     padding: 0;
-
-    background-image: linear-gradient(rgba(252, 252, 249, 0.90), rgba(252, 252, 249, 0.90)), url('images/minecraft-skin.png');
     background-color: #fcfcf9;
-    background-repeat: no-repeat;
-    background-position: center center; 
-    background-attachment: fixed;
-    background-size: auto 85vh; 
+}
+
+#bg-rows {
+position: fixed;
+inset: 0;
+z-index: 0;
+overflow: hidden;
+pointer-events: none;
+user-select: none;
+
+font-family: "Silkscreen", monospace;
+font-size: 16px;
+line-height: 28px;
+color: rgba(17, 17, 17, 0.07);
+}
+
+.bg-row {
+    height: 28px;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.bg-track {
+    display: inline-block;
+    white-space: pre;
+    will-change: transform;
+    animation: bg-scroll linear infinite;
+}
+
+.bg-row.reverse .bg-track {
+    animation-direction: reverse;
+}
+
+@keyframes bg-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-track { animation-play-state: paused; }
 }
 
 .content-container {
@@ -98,7 +132,7 @@ a:hover {
     height: 64px;
     width: auto;
     display: block;
-    transition: transform 0.2s ease, filter 0.2s ease; 
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .tool-logo:hover {
@@ -111,7 +145,7 @@ a:hover {
 
 .project-banner {
     max-width: 100%;
-    max-height: 300px; 
+    max-height: 300px;
     width: auto;
     margin-top: 0.8em;
     display: block;
@@ -154,7 +188,7 @@ footer a {
 }
 
 .art-image-wrapper {
-    background-color: rgba(0, 0, 0, 0.03); 
+    background-color: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -180,19 +214,21 @@ footer a {
 @media (prefers-color-scheme: dark) {
     body {
         color: #e4e4e7;
-        
-        background-image: linear-gradient(rgba(18, 18, 20, 0.92), rgba(18, 18, 20, 0.92)), url('images/minecraft-skin.png');
         background-color: #121214;
     }
-    
+
+    #bg-rows {
+    color: rgba(255, 255, 255, 0.07);
+    }
+
     .home-link, h1, h2, h3, a {
         color: #ffffff;
     }
-    
+
     .social-links, .social-links a, footer, footer a {
         color: #a1a1aa;
     }
-    
+
     a:hover {
         color: #ffffff;
     }
@@ -201,7 +237,7 @@ footer a {
         color: #ffffff;
         text-decoration: underline;
     }
-    
+
     footer {
         border-top-color: #27272a;
     }
