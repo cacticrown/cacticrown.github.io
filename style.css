@@ -8,17 +8,19 @@ body {
 }
 
 #bg-rows {
-position: fixed;
-inset: 0;
-z-index: 0;
-overflow: hidden;
-pointer-events: none;
-user-select: none;
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 30%, transparent 70%, black 100%);
+    mask-image: linear-gradient(to right, black 0%, transparent 30%, transparent 70%, black 100%);
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
 
-font-family: "Silkscreen", monospace;
-font-size: 16px;
-line-height: 28px;
-color: rgba(17, 17, 17, 0.07);
+    font-family: "Silkscreen", monospace;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(17, 17, 17, 0.17);
 }
 
 .bg-row {
@@ -41,10 +43,6 @@ color: rgba(17, 17, 17, 0.07);
 @keyframes bg-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .bg-track { animation-play-state: paused; }
 }
 
 .content-container {
@@ -218,7 +216,7 @@ footer a {
     }
 
     #bg-rows {
-    color: rgba(255, 255, 255, 0.07);
+        color: rgba(255, 255, 255, 0.07);
     }
 
     .home-link, h1, h2, h3, a {
